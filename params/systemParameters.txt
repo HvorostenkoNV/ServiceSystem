@@ -1,0 +1,16 @@
+fibonacci.generationSize=20
+fibonacci.generationDelay=1000000
+fibonacci.generatorUri=http://10.10.1.160/serviceSystem/public/generatorFibonacci.php
+fibonacci.clientUri=http://10.10.1.160/serviceSystem/public/clientFibonacci.php
+fibonacci.dataBusChanel=http://10.10.1.160/serviceSystem/public/dataBus.php?chanel=fibonacci
+
+primeNumber.generationSize=50
+primeNumber.generationDelay=1000000
+primeNumber.generatorUri=http://10.10.1.160/serviceSystem/public/generatorPrimeNumber.php
+primeNumber.clientUri=http://10.10.1.160/serviceSystem/public/clientPrimeNumber.php
+primeNumber.dataBusChanel=10.10.1.160/serviceSystem/public/dataBus.php?chanel=primeNumber
+
+dataBase.host=127.0.0.1
+dataBase.name=exchange
+dataBase.login=root
+dataBase.password=RooT987456@#
