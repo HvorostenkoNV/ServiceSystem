@@ -11,7 +11,6 @@ use ServiceSystem\{
 try {
     $generator      = new Generator();
     $parameters     = ParametersProvider::getInstance();
-
     $sequenceSize   = (int) $parameters->get('primeNumber.generationSize');
     $delay          = (int) $parameters->get('primeNumber.generationDelay');
     $chanel         = $parameters->get('primeNumber.dataBusChanel');
@@ -19,7 +18,6 @@ try {
     $generator->setSize($sequenceSize);
     $generator->setDelay($delay);
     $generator->setChanel($chanel);
-
     $generator->run();
 } catch (RangeException $exception) {
     echo "generator params set failed, {$exception->getMessage()}";

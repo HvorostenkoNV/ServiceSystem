@@ -11,7 +11,6 @@ use ServiceSystem\{
 try {
     $generator      = new Generator();
     $parameters     = ParametersProvider::getInstance();
-
     $sequenceSize   = (int) $parameters->get('fibonacci.generationSize');
     $delay          = (int) $parameters->get('fibonacci.generationDelay');
     $chanel         = $parameters->get('fibonacci.dataBusChanel');
@@ -19,7 +18,6 @@ try {
     $generator->setSize($sequenceSize);
     $generator->setDelay($delay);
     $generator->setChanel($chanel);
-
     $generator->run();
 } catch (RangeException $exception) {
     echo "generator params set failed, {$exception->getMessage()}";

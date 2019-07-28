@@ -11,25 +11,18 @@ use ServiceSystem\{
 };
 
 try {
-    $client             = new Client();
-    $parameters         = ParametersProvider::getInstance();
-
-    $dataBaseHost       = $parameters->get('dataBase.host');
-    $dataBaseName       = $parameters->get('dataBase.name');
-    $dataBaseLogin      = $parameters->get('dataBase.login');
-    $dataBasePassword   = $parameters->get('dataBase.password');
-    $chanel             = $parameters->get('fibonacci.dataBusChanel');
-
-    $dataBase           = new DataBase(
-        $dataBaseHost,
-        $dataBaseName,
-        $dataBaseLogin,
-        $dataBasePassword
+    $client     = new Client();
+    $parameters = ParametersProvider::getInstance();
+    $chanel     = $parameters->get('fibonacci.dataBusChanel');
+    $dataBase   = new DataBase(
+        $parameters->get('dataBase.host'),
+        $parameters->get('dataBase.name'),
+        $parameters->get('dataBase.login'),
+        $parameters->get('dataBase.password')
     );
 
     $client->setDataBase($dataBase);
     $client->setChanel($chanel);
-
     $client->run();
 } catch (ConnectionException $exception) {
     echo "database initialization error, {$exception->getMessage()}";
